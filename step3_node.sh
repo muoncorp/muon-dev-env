@@ -1,0 +1,9 @@
+#!/bin/sh
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+. $HOME/.profile
+
+nvm install node
+nvm use node
+npm install --global yarn
