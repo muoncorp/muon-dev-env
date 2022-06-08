@@ -20,3 +20,13 @@ npm update --global
 
 # Solana
 solana-install update
+
+# Go
+(cd ~/.goenv; git pull)
+version=$(echo $(curl https://go.dev/VERSION?m=text) | sed 's/go//')
+echo go version: ${version}
+goenv install ${version}
+goenv global ${version}
+
+# gh-cli
+(cd git_sources/gh-cli && git pull && make install prefix=$HOME/.local/share/gh)
