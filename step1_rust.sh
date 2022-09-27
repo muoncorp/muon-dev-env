@@ -22,3 +22,6 @@ cargo install wasm-pack
 
 # https://github.com/brson/basic-http-server
 cargo install basic-http-server
+
+# https://github.com/est31/cargo-udeps
+cargo install cargo-udeps
