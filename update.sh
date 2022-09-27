@@ -30,3 +30,16 @@ goenv global ${version}
 
 # gh-cli
 (cd git_sources/gh-cli && git pull && make install prefix=$HOME/.local/share/gh)
+
+# python (pyenv)
+# python2
+last_version=$(pyenv install --list | grep " 2\.7" | tail -n 1) 
+pyenv install -v $last_version
+
+# python3
+last_version=$(pyenv install --list | grep " 3\.10" | tail -n 1)
+pyenv install -v $last_version
+
+# set python3 as global
+pyenv global $last_version
+
