@@ -8,6 +8,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup toolchain install nightly
 rustup default nightly
 
+# for ESP32-C3
+rustup target add riscv32imc-unknown-none-elf
+# for NUCLEO F411RE
+rustup target add thumbv7em-none-eabi
+
 # https://crates.io/crates/cargo-edit
 cargo install cargo-edit
 
@@ -25,3 +30,23 @@ cargo install basic-http-server
 
 # https://github.com/est31/cargo-udeps
 cargo install cargo-udeps
+
+# https://github.com/cargo-generate/cargo-generate
+cargo install cargo-generate
+
+# https://github.com/esp-rs/espflash
+cargo install espflash
+cargo install cargo-espflash
+
+# https://github.com/esp-rs/espmonitor
+cargo install espmonitor
+cargo install cargo-espmonitor
+
+# https://github.com/esp-rs/embuild
+cargo install ldproxy
+
+# https://github.com/probe-rs/cargo-flash
+cargo install cargo-flash
+
+# https://github.com/rust-embedded/cargo-binutils
+cargo install cargo-binutils
