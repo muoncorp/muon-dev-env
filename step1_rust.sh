@@ -7,11 +7,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Rust nightly
 rustup toolchain install nightly
 rustup default nightly
+rustup component add llvm-tools-preview
 
 # for ESP32-C3
 rustup target add riscv32imc-unknown-none-elf
 # for NUCLEO F411RE
-rustup target add thumbv7em-none-eabi
+rustup target add thumbv7em-none-eabihf
 
 # https://crates.io/crates/cargo-edit
 cargo install cargo-edit

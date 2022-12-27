@@ -5,4 +5,6 @@ if ! cc --help >/dev/null; then
 	sudo apt install -y build-essential libssl-dev pkg-config
 	echo 'Install packages for egui'
 	sudo apt install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libspeechd-dev libxkbcommon-dev binaryen dfu-util ninja-build liblsma-dev libudev-dev openocd
+	echo 'Install packages for python'
+	sudo apt install libbz2-dev libreadline-dev
 fi
