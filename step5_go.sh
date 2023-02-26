@@ -2,7 +2,7 @@
 
 env_file=~/.bashrc
 if [ "$(uname)" == 'Darwin' ]; then
-    env_file=~/.zshenv
+    env_file=~/.zshrc
 fi
 
 git clone https://github.com/syndbg/goenv.git ~/.goenv
