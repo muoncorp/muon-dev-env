@@ -34,7 +34,7 @@ goenv global ${version}
 # python (pyenv)
 # python2
 #(cd ~/.pyenv && git fetch origin && git rebase origin/master)
-#last_version2=$(pyenv install --list | grep " 2\.7" | tail -n 1) 
+last_version2=$(pyenv install --list | grep " 2\.7" | tail -n 1) 
 #pyenv install -v $last_version2
 
 # python3
