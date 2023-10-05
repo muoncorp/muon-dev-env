@@ -44,3 +44,5 @@ pyenv install -v $last_version
 # set python3 as global
 pyenv global $last_version $last_version2
 
+# TODO: esp-idf
+
