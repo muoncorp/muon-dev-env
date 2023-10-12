@@ -46,3 +46,5 @@ pyenv global $last_version $last_version2
 
 # TODO: esp-idf
 
+# zola
+(cd git_sources/zola && git fetch origin && git rebase origin/master && cargo install --path . --locked)
