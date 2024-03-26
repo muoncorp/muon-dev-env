@@ -1,6 +1,7 @@
 git_sources/
 node_modules/
-
+flutter/
+archives/
 
 # Added by cargo
 

@@ -13,6 +13,9 @@ cargo install cargo-edit
 # https://github.com/nabijaczleweli/cargo-update
 cargo install cargo-update
 
+# https://github.com/watchexec/cargo-watch
+cargo install cargo-watch
+
 # https://github.com/cargo-generate/cargo-generate
 cargo install cargo-generate
 
