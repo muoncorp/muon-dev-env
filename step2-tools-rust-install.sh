@@ -30,3 +30,6 @@ if ! command -v solana &>/dev/null; then
     echo '# starship' >> "${env_file}"
     echo 'eval "$(starship init bash)"' >> "${env_file}"
 fi
+
+# https://github.com/cunarist/rinf
+cargo install rinf
