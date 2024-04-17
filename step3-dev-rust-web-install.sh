@@ -7,8 +7,12 @@ cargo install wasm-pack
 cargo install basic-http-server
 
 # zola
-mkdir -p git_sources
-cd git_sources
-git clone https://github.com/getzola/zola.git
-cd zola
-cargo install --path .
+if [ "$(uname)" == 'Darwin' ]; then
+    brew install zola
+else
+    mkdir -p git_sources
+    cd git_sources
+    git clone https://github.com/getzola/zola.git
+    cd zola
+    cargo install --path .
+fi

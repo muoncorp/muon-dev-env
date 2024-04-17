@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 env_file=~/.bashrc
+shellname=bash
 if [ "$(uname)" == 'Darwin' ]; then
     env_file=~/.zshrc
+    shellname=zsh
 fi
 
 # Cargo utils
@@ -25,10 +27,10 @@ cargo install cargo-udeps
 # https://starship.rs/
 cargo install starship --locked
 
-if ! command -v solana &>/dev/null; then
+if ! command -v starship &>/dev/null; then
     echo '' >> "${env_file}"
     echo '# starship' >> "${env_file}"
-    echo 'eval "$(starship init bash)"' >> "${env_file}"
+    echo 'eval "$(starship init $shellname)"' >> "${env_file}"
 fi
 
 # https://github.com/cunarist/rinf
