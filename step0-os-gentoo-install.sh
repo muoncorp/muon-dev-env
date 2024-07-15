@@ -38,3 +38,7 @@ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
 
 # Install required packages for flutter
 sudo emerge clang
+
+# Install for build android-7.1
+sudo emerge u-boot-tools fakeroot
+# zlib abi_x86_32
