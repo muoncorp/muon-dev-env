@@ -35,3 +35,6 @@ fi
 
 # https://github.com/cunarist/rinf
 cargo install rinf
+
+# https://github.com/cargo-bins/cargo-binstall
+cargo install cargo-binstall
