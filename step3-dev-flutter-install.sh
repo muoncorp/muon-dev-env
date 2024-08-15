@@ -19,9 +19,9 @@ if [ "$(uname)" == "Darwin" ]; then
     flutter doctor --android-licenses
     flutter doctor
 else
-    wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.5-stable.tar.xz
+    wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.0-stable.tar.xz
     cd ..
-    tar xf archives/flutter_linux_3.19.5-stable.tar.xz
+    tar xf archives/flutter_linux_3.24.0-stable.tar.xz
 
     echo '' >> ~/.bashrc
     echo '# flutter' >> ~/.bashrc

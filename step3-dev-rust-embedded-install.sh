@@ -38,4 +38,4 @@ echo '' >> "$env_file"
 echo '# espup' >> "$env_file"
 echo '. $HOME/export-esp.sh' >> "$env_file"
 
-cargo binstall probe-rs-tools
+#cargo binstall probe-rs-tools
