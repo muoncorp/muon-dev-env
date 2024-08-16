@@ -38,3 +38,6 @@ cargo install rinf
 
 # https://github.com/cargo-bins/cargo-binstall
 cargo install cargo-binstall
+
+# https://github.com/dtolnay/cargo-expand
+cargo install cargo-expand
