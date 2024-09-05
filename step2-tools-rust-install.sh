@@ -41,3 +41,6 @@ cargo install cargo-binstall
 
 # https://github.com/dtolnay/cargo-expand
 cargo install cargo-expand
+
+# https://github.com/EmbarkStudios/cargo-deny
+cargo install cargo-deny
