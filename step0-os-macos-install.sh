@@ -13,3 +13,4 @@ brew install cocoapods
 brew install android-studio
 brew install visual-studio-code
 brew install ninja dfu-util ccache
+brew install nushell
