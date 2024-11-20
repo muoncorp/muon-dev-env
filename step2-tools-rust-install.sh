@@ -77,3 +77,6 @@ cat <<EOF >> ~/.gitconfig
 [merge]
     conflictstyle = zdiff3
 EOF
+
+# https://github.com/sharkdp/fd
+cargo install fd-find
