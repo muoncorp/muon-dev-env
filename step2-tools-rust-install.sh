@@ -26,12 +26,9 @@ cargo install cargo-udeps
 
 # https://starship.rs/
 cargo install starship --locked
-
-if ! command -v starship &>/dev/null; then
-    echo '' >> "${env_file}"
-    echo '# starship' >> "${env_file}"
-    echo 'eval "$(starship init $shellname)"' >> "${env_file}"
-fi
+echo '' >> "${env_file}"
+echo '# starship' >> "${env_file}"
+echo 'eval "$(starship init $shellname)"' >> "${env_file}"
 
 # https://github.com/cunarist/rinf
 cargo install rinf
@@ -49,7 +46,13 @@ cargo install cargo-deny
 cargo install eza
 
 # https://github.com/bootandy/dust
-carge install du-dust
+cargo install du-dust
 
 # https://github.com/sharkdp/bat
 cargo install bat
+
+# https://github.com/ajeetdsouza/zoxide
+cargo install zoxide
+echo '' >> "${env_file}"
+echo '# zoxide' >> "${env_file}"
+echo 'eval "$(zoxide init $shellname)"' >> "${env_file}"
