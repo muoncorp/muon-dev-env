@@ -56,3 +56,6 @@ cargo install zoxide
 echo '' >> "${env_file}"
 echo '# zoxide' >> "${env_file}"
 echo 'eval "$(zoxide init $shellname)"' >> "${env_file}"
+
+# https://github.com/Canop/dysk
+cargo install dysk
