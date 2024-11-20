@@ -48,5 +48,8 @@ cargo install cargo-deny
 # https://eza.rocks/ 
 cargo install eza
 
-# https://github.com/bootandy/dust 
+# https://github.com/bootandy/dust
 carge install du-dust
+
+# https://github.com/sharkdp/bat
+cargo install bat
