@@ -86,3 +86,6 @@ cargo install ripgrep
 
 # https://github.com/dalance/procs
 cargo install procs
+
+# https://github.com/ClementTsang/bottom (command: btm)
+cargo install bottom
