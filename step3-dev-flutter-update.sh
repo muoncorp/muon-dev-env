@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-flutter upgrade
+flutter upgrade --force
