@@ -44,3 +44,6 @@ cargo install cargo-expand
 
 # https://github.com/EmbarkStudios/cargo-deny
 cargo install cargo-deny
+
+# https://eza.rocks/ 
+cargo install eza
