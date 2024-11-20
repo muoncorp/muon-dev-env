@@ -47,3 +47,6 @@ cargo install cargo-deny
 
 # https://eza.rocks/ 
 cargo install eza
+
+# https://github.com/bootandy/dust 
+carge install du-dust
