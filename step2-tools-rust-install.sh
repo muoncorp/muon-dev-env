@@ -45,13 +45,13 @@ cargo install cargo-deny
 # https://eza.rocks/ 
 cargo install eza
 
-# https://github.com/bootandy/dust
+# https://github.com/bootandy/dust (command: dust)
 cargo install du-dust
 
 # https://github.com/sharkdp/bat
 cargo install bat
 
-# https://github.com/ajeetdsouza/zoxide
+# https://github.com/ajeetdsouza/zoxide (command: z)
 cargo install zoxide
 echo '' >> "${env_file}"
 echo '# zoxide' >> "${env_file}"
@@ -78,5 +78,8 @@ cat <<EOF >> ~/.gitconfig
     conflictstyle = zdiff3
 EOF
 
-# https://github.com/sharkdp/fd
+# https://github.com/sharkdp/fd (command: fd)
 cargo install fd-find
+
+# https://github.com/burntsushi/ripgrep (command: rg)
+cargo install ripgrep
