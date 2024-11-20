@@ -59,3 +59,21 @@ echo 'eval "$(zoxide init $shellname)"' >> "${env_file}"
 
 # https://github.com/Canop/dysk
 cargo install dysk
+
+# https://github.com/dandavison/delta
+cargo install git-delta
+
+cat <<EOF >> ~/.gitconfig
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictstyle = zdiff3
+EOF
