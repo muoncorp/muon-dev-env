@@ -83,3 +83,6 @@ cargo install fd-find
 
 # https://github.com/burntsushi/ripgrep (command: rg)
 cargo install ripgrep
+
+# https://github.com/dalance/procs
+cargo install procs
