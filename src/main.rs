@@ -3,7 +3,6 @@ mod probe;
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use probe::probe_all;
-use tracing::info;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -29,17 +28,19 @@ fn main() -> Result<()> {
 
     println!("args: {:?}", cli);
 
+    let probe_data = probe_all()?;
+
     if let Some(command) = cli.command {
         match command {
             Commands::Check => {
-                let probe_data = probe_all()?;
-
                 println!("probe: {:?}", probe_data);
                 if probe_data.is_unknown_os() {
-                    panic!("Unknown OS!");
+                    panic!("Unknown OS!"); // TODO: improve error message
                 }
-                info!("OS: {:?}", probe_data.os);
-                info!("Shell: {:?}", probe_data.shell);
+                if probe_data.is_unknow_shell() {
+                    panic!("Unknown shell!"); // TODO: improve error message
+                }
+                probe_data.print();
             }
             Commands::Install => {
                 todo!();

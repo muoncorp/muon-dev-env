@@ -2,6 +2,7 @@ use anyhow::Result;
 
 use os::Os;
 use shell::Shell;
+use tracing::info;
 
 pub mod os;
 pub mod shell;
@@ -18,6 +19,15 @@ pub struct ProbeData {
 impl ProbeData {
     pub fn is_unknown_os(&self) -> bool {
         &self.os == &Os::Unknown
+    }
+
+    pub fn is_unknow_shell(&self) -> bool {
+        &self.shell == &Shell::Unknown
+    }
+
+    pub fn print(&self) {
+        info!("OS: {:?}", self.os);
+        info!("Shell: {:?}", self.shell);
     }
 }
 
