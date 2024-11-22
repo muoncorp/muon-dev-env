@@ -25,7 +25,7 @@ impl Shell {
     }
 
     fn probe_linux_shell() -> Result<Self> {
-        Ok(Self::from_str(&env::var("SHELL")?))
+        Self::from_path(Path::new(&env::var("SHELL")?))
     }
 
     fn probe_macos_shell() -> Result<Self> {
@@ -40,25 +40,19 @@ impl Shell {
             .ok_or(anyhow!("Failed to get shell on macos!"))
             .map(ToOwned::to_owned)?;
         let path: &Path = Path::new(&shell);
-        Ok(Self::from_str(
-            path.file_name()
-                .ok_or(anyhow!("invalid path"))?
-                .to_str()
-                .ok_or(anyhow!("invalid str"))?,
-        ))
+        Self::from_path(path)
     }
 
-    fn from_str(s: &str) -> Self {
-        match s {
-            "zsh" => {
-                return Self::Zsh;
-            }
-            "bash" => {
-                return Self::Bash;
-            }
-            _ => {
-                return Shell::Unknown;
-            }
-        }
+    fn from_path(path: &Path) -> Result<Self> {
+        let name = path
+            .file_name()
+            .ok_or(anyhow!("invalid path"))?
+            .to_str()
+            .ok_or(anyhow!("invalid str"))?;
+        Ok(match name {
+            "zsh" => Self::Zsh,
+            "bash" => Self::Bash,
+            _ => Self::Unknown,
+        })
     }
 }
