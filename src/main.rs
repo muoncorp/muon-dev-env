@@ -1,7 +1,9 @@
+mod os_packages;
 mod probe;
 
 use anyhow::Result;
 use clap::{Parser, Subcommand};
+use os_packages::install_os_packages;
 use probe::probe_all;
 
 #[derive(Parser, Debug)]
@@ -40,10 +42,10 @@ fn main() -> Result<()> {
                 if probe_data.is_unknow_shell() {
                     panic!("Unknown shell!"); // TODO: improve error message
                 }
-                probe_data.print();
+                probe_data.print()?;
             }
             Commands::Install => {
-                todo!();
+                install_os_packages(&probe_data.os)?;
             }
             Commands::Update => {
                 todo!();

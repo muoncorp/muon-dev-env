@@ -25,9 +25,12 @@ impl ProbeData {
         &self.shell == &Shell::Unknown
     }
 
-    pub fn print(&self) {
+    pub fn print(&self) -> Result<()> {
         info!("OS: {:?}", self.os);
+        info!("  - {}", self.os.get_distribution_name()?);
         info!("Shell: {:?}", self.shell);
+        info!("  - {:?}", self.shell.get_rc_file_path()?);
+        Ok(())
     }
 }
 

@@ -1,4 +1,8 @@
-use std::{env, path::Path, process::Command};
+use std::{
+    env,
+    path::{Path, PathBuf},
+    process::Command,
+};
 
 use anyhow::{anyhow, Result};
 use tracing::debug;
@@ -25,7 +29,7 @@ impl Shell {
     }
 
     fn probe_linux_shell() -> Result<Self> {
-        Self::from_path(Path::new(&env::var("SHELL")?))
+        Self::from_shell_path(Path::new(&env::var("SHELL")?))
     }
 
     fn probe_macos_shell() -> Result<Self> {
@@ -40,10 +44,10 @@ impl Shell {
             .ok_or(anyhow!("Failed to get shell on macos!"))
             .map(ToOwned::to_owned)?;
         let path: &Path = Path::new(&shell);
-        Self::from_path(path)
+        Self::from_shell_path(path)
     }
 
-    fn from_path(path: &Path) -> Result<Self> {
+    fn from_shell_path(path: &Path) -> Result<Self> {
         let name = path
             .file_name()
             .ok_or(anyhow!("invalid path"))?
@@ -54,5 +58,16 @@ impl Shell {
             "bash" => Self::Bash,
             _ => Self::Unknown,
         })
+    }
+
+    pub fn get_rc_file_path(&self) -> Result<PathBuf> {
+        let home_path = home::home_dir().ok_or(anyhow!("cannot get home dir"))?;
+
+        match self {
+            Shell::Bash => Ok(home_path.join(".bashrc")),
+            Shell::Zsh => Ok(home_path.join(".zshrc")),
+            Shell::PowerShell => Err(anyhow!("not implemented")),
+            Shell::Unknown => Err(anyhow!("unknown shell")),
+        }
     }
 }
