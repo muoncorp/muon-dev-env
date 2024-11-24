@@ -1,3 +1,4 @@
+mod divider;
 mod os_packages;
 mod probe;
 
