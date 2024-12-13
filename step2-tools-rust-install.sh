@@ -89,3 +89,9 @@ cargo install procs
 
 # https://github.com/ClementTsang/bottom (command: btm)
 cargo install bottom
+
+# https://github.com/Canop/broot
+cargo install broot
+
+# https://github.com/sharkdp/diskus
+cargo install diskus
