@@ -34,8 +34,12 @@ cargo install espup
 
 espup install
 
-echo '' >> "$env_file"
-echo '# espup' >> "$env_file"
-echo '. $HOME/export-esp.sh' >> "$env_file"
+#echo '' >> "$env_file"
+#echo '# espup' >> "$env_file"
+#echo '. $HOME/export-esp.sh' >> "$env_file"
 
 #cargo binstall probe-rs-tools
+
+# https://github.com/esp-rs/esp-generate
+cargo install esp-generate
+
