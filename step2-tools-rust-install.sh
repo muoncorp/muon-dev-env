@@ -9,6 +9,9 @@ fi
 
 # Cargo utils
 
+# https://github.com/cargo-bins/cargo-binstall
+cargo install cargo-binstall
+
 # https://crates.io/crates/cargo-edit
 cargo install cargo-edit
 
@@ -32,9 +35,6 @@ echo 'eval "$(starship init $shellname)"' >> "${env_file}"
 
 # https://github.com/cunarist/rinf
 cargo install rinf
-
-# https://github.com/cargo-bins/cargo-binstall
-cargo install cargo-binstall
 
 # https://github.com/dtolnay/cargo-expand
 cargo install cargo-expand
@@ -95,3 +95,6 @@ cargo install broot
 
 # https://github.com/sharkdp/diskus
 cargo install diskus
+
+# https://github.com/cross-rs/cross
+cargo install cross --git https://github.com/cross-rs/cross
